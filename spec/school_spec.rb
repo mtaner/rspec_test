@@ -42,9 +42,20 @@ describe 'School' do
   end
 
   describe School do
-    it_behaves_like "good_student"
+  it_behaves_like "good_student"
   end
 
+  it "initializes with a name" do
+  expect(student.name).to eq("Dave")
+  end
+
+  it "can't change its name" do
+   expect {student.name = "Koren" }.to raise_error(StandardError)
+  end
+
+  it "can initialize a student" do
+    expect(student).to be_a(School)
+  end
 
 
 end
